@@ -7,19 +7,10 @@
     <servlet-name>WebSocketMessageServlet</servlet-name>
     <servlet-class>com.jucaipen.chat.WebSocketMessageServlet</servlet-class>
   </servlet>
-  <servlet>
-    <servlet-name>UserInfo</servlet-name>
-    <servlet-class>com.jucaipen.chat.UserInfo</servlet-class>
-  </servlet>
-
 
   <servlet-mapping>
     <servlet-name>WebSocketMessageServlet</servlet-name>
     <url-pattern>/servlet/chat</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>UserInfo</servlet-name>
-    <url-pattern>/servlet/info</url-pattern>
   </servlet-mapping>
 
 </web-app>

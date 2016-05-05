@@ -1,19 +1,16 @@
 package com.jucaipen.chat;
 
-import java.awt.Robot;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import net.sf.json.JSONObject;
-import org.apache.catalina.websocket.MessageInbound;
-import org.apache.catalina.websocket.WsOutbound;
 
 /**
  * @author Administrator
  *
  *  处理用户上线、下线、发送消息
  *
- */
+ */       
 public class WebSocketMessageInbound extends MessageInbound {
 	//当前连接的用户名称  
     private final String user; 
@@ -33,7 +30,6 @@ public class WebSocketMessageInbound extends MessageInbound {
     	object.element("user", this.user);
     	//向所有在线用户推送当前用户上线的消息  
     	WebSocketMessageInboundPool.sendMessage(object.toString());
-    	
     	object=new JSONObject();
     	object.element("type","get_online_user");
     	object.element("list", WebSocketMessageInboundPool.getOnlineUser());

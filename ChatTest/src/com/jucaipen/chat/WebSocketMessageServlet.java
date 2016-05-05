@@ -1,11 +1,8 @@
 package com.jucaipen.chat;
 import java.io.UnsupportedEncodingException;
-
 import javax.servlet.http.HttpServletRequest;
-
 import org.apache.catalina.websocket.StreamInbound;
 import org.apache.catalina.websocket.WebSocketServlet;
-
 public class WebSocketMessageServlet extends WebSocketServlet {
 	
 	private static final long serialVersionUID = 1L;  
@@ -17,11 +14,9 @@ public class WebSocketMessageServlet extends WebSocketServlet {
 			request.setCharacterEncoding("UTF-8");
 			 return (String) request.getParameter("user");
 		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
-       
     }  
 
 	@Override
