@@ -17,11 +17,12 @@ public class Server{
 		try {
 			s = new ServerSocket(8989);
 			while (true) {
+				System.out.println("======================wait connect.....");
 				Socket socket=s.accept();
 				DataInputStream dis=new DataInputStream(socket.getInputStream());
 				DataOutputStream dos=new DataOutputStream(socket.getOutputStream());
 				soMap.put(socket.getPort(), socket);
-				dos.writeUTF(socket.getPort()+":"+"连接成功了~~");
+				dos.writeUTF(socket.getPort()+"     "+socket.getInetAddress()+":"+"连接成功了~~");
 				dos.flush();
 				String result=dis.readUTF();
 				System.out.println("s:"+result);
